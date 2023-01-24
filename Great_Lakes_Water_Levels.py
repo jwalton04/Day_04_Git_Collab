@@ -44,7 +44,18 @@ import matplotlib.pyplot as plt
 # Using the Michigan/Huron and Superior Datasets, plot the 
 # Michigan/Hurion Water Level vs Superior Water Level to see if there 
 # is any correlation between the water levels.
-
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+mich_huron_water_level = pd.read_csv("mhu.csv", skiprows = 1)
+superior_water_level = pd.read_csv("sup.csv",skiprows = 1)
+mich_huron_water_level = mich_huron_water_level.iloc[:,1]
+superior_water_level = superior_water_level.iloc[:,1]
+plt.scatter(mich_huron_water_level,superior_water_level)
+plt.title('Michigan/Huron Water Level vs Superior Water Level')
+plt.xlabel('Michigan/Huron Water Level')
+plt.ylabel('Superior Water Level')
+plt.show()
 
 
 # PART 6
@@ -55,7 +66,7 @@ import matplotlib.pyplot as plt
 
 
 # PART 7
-#Using the Superior and Ontario Datasets, plot the Superior Water 
+# Using the Superior and Ontario Datasets, plot the Superior Water 
 # Level vs Ontario Water Level to see if there is any correlation 
 # between the water levels.
 
