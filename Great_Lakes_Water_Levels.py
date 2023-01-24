@@ -1,4 +1,4 @@
-""""
+"""
 To use this notebook for your in-class assignment, you will need these 
 files, which you shoujld have downloaded:
 * mhu.csv -- Lake Michigan and Lake Huron
@@ -10,7 +10,7 @@ As instructed in the in-class activity notebook for today, you are
 only expected to complete one PART below. Do not worry if your group 
 is not big enough to finish all parts below, but if you have extra 
 time, you're welcome to do so.
-""""
+"""
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -37,7 +37,13 @@ import matplotlib.pyplot as plt
 # PART 4
 # Using the Ontario Dataset, plot the Water Level, the second column, 
 # as a function of time years
+ontario_data=pd.read_csv("ont.csv")
+years=ontario_data['year']
+water_level=ontario_data['Lake Ontario annual averages']
 
+plt.plot(years, water_level)
+plt.xlabel("Years")
+plt.ylabel("Water Level")
 
 
 # PART 5
