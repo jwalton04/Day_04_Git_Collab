@@ -26,7 +26,14 @@ import matplotlib.pyplot as plt
 # Using the Superior Dataset, plot the Water Level, the second column, 
 # as a function of time years
 
+sup_data = pd.read_csv("sup.csv")
+water_level = sup_data["lake levels"]
+time = sup_data["year"]
 
+plt.plot(time, water_level)
+plt.xlabel = "Year"
+plt.ylabel = "water_level (unit)"
+plt.show()
 
 # PART 3
 # Using the Erie Dataset, plot the Water Level, the second column, 
@@ -50,7 +57,18 @@ plt.ylabel("Water Level")
 # Using the Michigan/Huron and Superior Datasets, plot the 
 # Michigan/Hurion Water Level vs Superior Water Level to see if there 
 # is any correlation between the water levels.
-
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+mich_huron_water_level = pd.read_csv("mhu.csv", skiprows = 1)
+superior_water_level = pd.read_csv("sup.csv",skiprows = 1)
+mich_huron_water_level = mich_huron_water_level.iloc[:,1]
+superior_water_level = superior_water_level.iloc[:,1]
+plt.scatter(mich_huron_water_level,superior_water_level)
+plt.title('Michigan/Huron Water Level vs Superior Water Level')
+plt.xlabel('Michigan/Huron Water Level')
+plt.ylabel('Superior Water Level')
+plt.show()
 
 
 # PART 6
@@ -61,7 +79,7 @@ plt.ylabel("Water Level")
 
 
 # PART 7
-#Using the Superior and Ontario Datasets, plot the Superior Water 
+# Using the Superior and Ontario Datasets, plot the Superior Water 
 # Level vs Ontario Water Level to see if there is any correlation 
 # between the water levels.
 
