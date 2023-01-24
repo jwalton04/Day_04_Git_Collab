@@ -39,7 +39,16 @@ plt.show()
 # Using the Erie Dataset, plot the Water Level, the second column, 
 # as a function of time years
 
+import matplotlib.pyplot as plt
+import pandas as pd
 
+erie = pd.read_csv('ERIE.csv')
+
+plt.plot(erie.iloc[:, 0], erie.iloc[:, 1])
+plt.title('Erie water levels')
+plt.xlabel('time')
+plt.ylabel('water level')
+plt.grid()
 
 # PART 4
 # Using the Ontario Dataset, plot the Water Level, the second column, 
